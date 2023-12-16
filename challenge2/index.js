@@ -1,5 +1,6 @@
 // function declaration
 function speeddetector(speed){
+  //declaring variables
   const speedLimit = 70
   let points = 0
   // adding conditionals
@@ -15,6 +16,6 @@ function speeddetector(speed){
   }
 
 }
- let carspeed = 140
+ let speed = 60
  // calling the function with an argument
- speeddetector(carspeed);
+ speeddetector(speed);
