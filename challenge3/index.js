@@ -67,9 +67,9 @@ function calculateNetSalary(basicSalary, benefits) {
     };
 }
 
-// Example usage
+// Trying to see if the code really works
 const basicSalary = 50000; // Example basic salary
-const benefits = 10000; // Example benefits
+const benefits = 60000; // Example benefits
 
 const result = calculateNetSalary(basicSalary, benefits);
 console.log(result);
