@@ -35,7 +35,38 @@ let grosssalary = basicsalary + benefits
 //calculate the tax
 let tax = 0 
 let taxableincome = grosssalary - 2400 // 2400 is for personal relief
-
-
+for (const bracket of taxbrackets) {
+    if (taxableincome <= 0) break
+    const taxableinthisbracket = Math.min(bracket.max - bracket.min + 1,taxableincome)
+    tax += taxableinthisbracket * bracket.rate
+    taxableincome = taxableinthisbracket
+}
+// calculating the Nhif deduction
+let Nhifdeduction = 0
+for (const nhifbracket of nhifrates){
+    if (grosssalary >= nhifbracket.min && grosssalary <= nhifbracket.max){
+        Nhifdeduction = nhifbracket.deduction
+        break
+    } 
+ }
+ //calculating the Net Salary
+ const netSalary = grosssalary - (tax + Nhifdeduction + nssfcontribution)
+ // returning the results
+ return {
+    "Gross Salary": grosssalary,
+    "Tax" : tax,
+    "NHIF Deduction" : Nhifdeduction,
+    "NSSF Contribution" : nssfcontributions,
+    "Net Salary" : netSalary
+ }
 
 }
+/* Let's see if it's working
+const basicsalary = prompt("Enter Basic Salary:")
+const benefits = prompt("Enter Benefits:")
+
+const result = netSalary(basicsalary,benefits)
+for(const key in result){
+    console.log(`${key}: ${result[key]}`)
+}
+*/
