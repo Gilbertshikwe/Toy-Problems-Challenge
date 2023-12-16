@@ -2,6 +2,7 @@
 function myFunction(){
 let marks = prompt("Enter the student marks here:From 0 - 100")
 let grade = ""
+//adding the conditionals
 if (marks > 79){
     grade = "A"
 }
@@ -17,5 +18,6 @@ else if(marks >= 40 && marks <= 49){
 else {
     grade = "E"
 }
-document.getElementById("button").innerHTML = grade
+//DOM method
+document.getElementById("button").innerHTML = "Hello there.The student's grade is:" + grade
 }
