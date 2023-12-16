@@ -36,5 +36,20 @@ function calculateNHIFDeductions(grossPay) {
 
     return nhifDeduction;
 }
+// Function to calculate NSSF contributions based on the new rates
+function calculateNSSFContribution(pensionablePay) {
+    let nssfContribution = 0;
+    
+    if (pensionablePay <= 6000) {
+        nssfContribution = pensionablePay * 0.06;
+    } else if (pensionablePay <= 18000) {
+        nssfContribution = 1080;
+    }
+    
+    return nssfContribution;
+}
+
+
+
 
 
