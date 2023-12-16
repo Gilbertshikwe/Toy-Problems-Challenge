@@ -6,7 +6,7 @@ function speeddetector(speed){
   if (speed <= speedLimit){
     console.log("Ok")
   } else{
-    points = Maths.abs((speed - speedLimit)/5) 
+    points = Math.floor((speed - speedLimit)/5) 
     if (points > 12) {
         console.log("License suspended")
    } else{
@@ -15,4 +15,6 @@ function speeddetector(speed){
   }
 
 }
- 
+ let carspeed = 140
+ // calling the function with an argument
+ speeddetector(carspeed);
