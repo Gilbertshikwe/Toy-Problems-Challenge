@@ -18,3 +18,23 @@ function calculatePAYE(annualTaxablePay) {
     return tax / 12; // Monthly tax
 }
 
+// Function to calculate NHIF Deductions based on provided rates
+function calculateNHIFDeductions(grossPay) {
+    const nhifRanges = [
+        { min: 0, max: 5999, deduction: 150 },
+        { min: 35000, max: Infinity, deduction: 950 }
+    ];
+
+    let nhifDeduction = 0;
+
+    for (const range of nhifRanges) {
+        if (grossPay >= range.min && grossPay <= range.max) {
+            nhifDeduction = range.deduction;
+            break;
+        }
+    }
+
+    return nhifDeduction;
+}
+
+
