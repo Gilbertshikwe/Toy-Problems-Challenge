@@ -17,5 +17,5 @@ else if(marks >= 40 && marks <= 49){
 else {
     grade = "E"
 }
-
+document.getElementById("button").innerHTML = grade
 }
