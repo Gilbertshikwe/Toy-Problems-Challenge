@@ -48,6 +48,32 @@ function calculateNSSFContribution(pensionablePay) {
     
     return nssfContribution;
 }
+// Function to calculate net salary
+function calculateNetSalary(basicSalary, benefits) {
+    const annualTaxablePay = (basicSalary + benefits) * 12;
+    const paye = calculatePAYE(annualTaxablePay);
+    const nhif = calculateNHIFDeductions(basicSalary + benefits);
+    const nssf = calculateNSSFContribution(basicSalary + benefits);
+    
+    const grossSalary = basicSalary + benefits;
+    const netSalary = grossSalary - (paye + nhif + nssf);
+    
+    return {
+        'Gross Salary': grossSalary,
+        'PAYE (Tax)': paye,
+        'NHIF Deductions': nhif,
+        'NSSF Contributions': nssf,
+        'Net Salary': netSalary
+    };
+}
+
+// Example usage
+const basicSalary = 50000; // Example basic salary
+const benefits = 10000; // Example benefits
+
+const result = calculateNetSalary(basicSalary, benefits);
+console.log(result);
+
 
 
 
