@@ -1,7 +1,7 @@
 //declaring my function
 function myFunction(){
-let marks = prompt("Enter the student marks here:From 0 - 100")
-let grade = ""
+const marks = prompt("Enter the student marks here:From 0 - 100")
+let grade = ''
 //adding the conditionals
 if (marks > 79){
     grade = "A"
