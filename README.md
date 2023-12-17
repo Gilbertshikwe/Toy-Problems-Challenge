@@ -1,5 +1,5 @@
 ### Author Name
-  My Names are Gilbert Shikwe.
+  Gilbert Imbaya Shikwe.
 ### Running Instructions.
   1. Ensure Node is installed
   2. To Run a file use <node filename..>
